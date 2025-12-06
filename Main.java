@@ -1,23 +1,23 @@
-package ejercicio5vehiculo;
+package ejercicio6Empleado;
 
 public class Main {
     public static void main(String[] args) {
 
-        // Crear un objeto Automovil
-        Automovil auto1 = new Automovil("Toyota", 2010, 180.5);
+        // Crear un objeto Empleado
+        Empleado emp1 = new Empleado("EMP-900", 12000.00, 12);
 
         // Mostrar datos iniciales
-        System.out.println("Marca: " + auto1.getMarca());
-        System.out.println("Año de fabricación: " + auto1.getAnioFabricacion());
-        System.out.println("Velocidad máxima: " + auto1.getVelocidadMaxima() + " km/h");
+        System.out.println("Clave del empleado: " + emp1.getClaveEmpleado());
+        System.out.println("Salario mensual: $" + emp1.getSalarioMensual());
+        System.out.println("Retención de impuestos: " + emp1.getPorcentajeRetencion() + "%");
 
-        // Probar encendido
-        String mensajeEncendido = auto1.encender();
-        System.out.println(mensajeEncendido);
+        // Calcular salario neto
+        double salarioNeto = emp1.calcularSalarioNeto();
+        System.out.println("Salario neto: $" + salarioNeto);
 
-        // Calcular antigüedad
-        int antiguedad = auto1.calcularAntiguedad(2024);
-        System.out.println("Antigüedad del vehículo: " + antiguedad + " años");
+        // Aplicar aumento
+        emp1.aplicarAumento(10);
+        System.out.println("Nuevo salario mensual: $" + emp1.getSalarioMensual());
     }
 }
 
