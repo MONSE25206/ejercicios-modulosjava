@@ -1,26 +1,26 @@
-package ejercicio7Tareas;
+package ejercicio8temperaturayclima;
 
 public class Main {
-    public static void main(String[] args) {
 
-        // Crear una tarea
-        Tarea tarea1 = new Tarea("Entregar reporte final", "Alta", false);
+        public static void main(String[] args) {
 
-        // Mostrar datos iniciales
-        System.out.println("Descripción: " + tarea1.getDescripcion());
-        System.out.println("Prioridad: " + tarea1.getPrioridad());
-        System.out.println("¿Completada?: " + tarea1.isCompletada());
+            // Crear un registro de temperatura
+            Temperatura temp1 = new Temperatura(42, "C", "2025-02-10");
 
-        // Verificar si es urgente
-        System.out.println("¿Es urgente?: " + tarea1.esUrgente());
+            // Mostrar datos iniciales
+            System.out.println("Valor: " + temp1.getValor() + "°" + temp1.getUnidad());
+            System.out.println("Fecha: " + temp1.getFechaRegistro());
 
-        // Completar la tarea
-        tarea1.completarTarea();
-        System.out.println("¿Completada ahora?: " + tarea1.isCompletada());
+            // Verificar si es extrema
+            System.out.println("¿Es extrema?: " + temp1.esExtrema());
 
-        // Verificar urgencia nuevamente
-        System.out.println("¿Es urgente ahora?: " + tarea1.esUrgente());
+            // Convertir unidad
+            temp1.convertir();
+            System.out.println("Nueva temperatura: " + temp1.getValor() + "°" + temp1.getUnidad());
+
+            // Verificar nuevamente
+            System.out.println("¿Es extrema ahora?: " + temp1.esExtrema());
+        }
     }
-}
 
 
