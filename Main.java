@@ -1,23 +1,23 @@
-package ejercicio9SRA;
+package ejercicio10cadenadetexto;
 
 public class Main {
     public static void main(String[] args) {
 
-        // Crear un vuelo
-        Vuelo vuelo1 = new Vuelo("MX-450", 120, 85);
+        // Crear un objeto CadenaTexto
+        CadenaTexto texto1 = new CadenaTexto("Hola mundo", "MOD-TXT", 50);
 
         // Mostrar datos iniciales
-        System.out.println("Código del vuelo: " + vuelo1.getCodigoVuelo());
-        System.out.println("Capacidad máxima: " + vuelo1.getCapacidadMaxima());
-        System.out.println("Asientos reservados: " + vuelo1.getAsientosReservados());
+        System.out.println("Cadena actual: " + texto1.getCadenaActual());
+        System.out.println("ID del módulo: " + texto1.getIdModulo());
+        System.out.println("Longitud máxima: " + texto1.getLongitudMaxima());
 
-        // Intentar reservar un asiento
-        vuelo1.reservarAsiento();
-        System.out.println("Asientos reservados ahora: " + vuelo1.getAsientosReservados());
+        // Agregar prefijo
+        String nuevaCadena = texto1.agregarPrefijo(">>> ");
+        System.out.println("Cadena con prefijo: " + nuevaCadena);
 
-        // Calcular porcentaje de ocupación
-        double porcentaje = vuelo1.calcularPorcentajeOcupacion();
-        System.out.println("Porcentaje de ocupación: " + porcentaje + "%");
+        // Contar espacios
+        int espacios = texto1.contarEspacios();
+        System.out.println("Cantidad de espacios en blanco: " + espacios);
     }
 }
 
