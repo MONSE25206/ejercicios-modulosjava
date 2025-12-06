@@ -1,23 +1,25 @@
-package ejercicio6Empleado;
+package ejercicio7Tareas;
 
 public class Main {
     public static void main(String[] args) {
 
-        // Crear un objeto Empleado
-        Empleado emp1 = new Empleado("EMP-900", 12000.00, 12);
+        // Crear una tarea
+        Tarea tarea1 = new Tarea("Entregar reporte final", "Alta", false);
 
         // Mostrar datos iniciales
-        System.out.println("Clave del empleado: " + emp1.getClaveEmpleado());
-        System.out.println("Salario mensual: $" + emp1.getSalarioMensual());
-        System.out.println("Retención de impuestos: " + emp1.getPorcentajeRetencion() + "%");
+        System.out.println("Descripción: " + tarea1.getDescripcion());
+        System.out.println("Prioridad: " + tarea1.getPrioridad());
+        System.out.println("¿Completada?: " + tarea1.isCompletada());
 
-        // Calcular salario neto
-        double salarioNeto = emp1.calcularSalarioNeto();
-        System.out.println("Salario neto: $" + salarioNeto);
+        // Verificar si es urgente
+        System.out.println("¿Es urgente?: " + tarea1.esUrgente());
 
-        // Aplicar aumento
-        emp1.aplicarAumento(10);
-        System.out.println("Nuevo salario mensual: $" + emp1.getSalarioMensual());
+        // Completar la tarea
+        tarea1.completarTarea();
+        System.out.println("¿Completada ahora?: " + tarea1.isCompletada());
+
+        // Verificar urgencia nuevamente
+        System.out.println("¿Es urgente ahora?: " + tarea1.esUrgente());
     }
 }
 
