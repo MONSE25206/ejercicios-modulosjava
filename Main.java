@@ -1,26 +1,24 @@
-package ejercicio8temperaturayclima;
+package ejercicio9SRA;
 
 public class Main {
+    public static void main(String[] args) {
 
-        public static void main(String[] args) {
+        // Crear un vuelo
+        Vuelo vuelo1 = new Vuelo("MX-450", 120, 85);
 
-            // Crear un registro de temperatura
-            Temperatura temp1 = new Temperatura(42, "C", "2025-02-10");
+        // Mostrar datos iniciales
+        System.out.println("Código del vuelo: " + vuelo1.getCodigoVuelo());
+        System.out.println("Capacidad máxima: " + vuelo1.getCapacidadMaxima());
+        System.out.println("Asientos reservados: " + vuelo1.getAsientosReservados());
 
-            // Mostrar datos iniciales
-            System.out.println("Valor: " + temp1.getValor() + "°" + temp1.getUnidad());
-            System.out.println("Fecha: " + temp1.getFechaRegistro());
+        // Intentar reservar un asiento
+        vuelo1.reservarAsiento();
+        System.out.println("Asientos reservados ahora: " + vuelo1.getAsientosReservados());
 
-            // Verificar si es extrema
-            System.out.println("¿Es extrema?: " + temp1.esExtrema());
-
-            // Convertir unidad
-            temp1.convertir();
-            System.out.println("Nueva temperatura: " + temp1.getValor() + "°" + temp1.getUnidad());
-
-            // Verificar nuevamente
-            System.out.println("¿Es extrema ahora?: " + temp1.esExtrema());
-        }
+        // Calcular porcentaje de ocupación
+        double porcentaje = vuelo1.calcularPorcentajeOcupacion();
+        System.out.println("Porcentaje de ocupación: " + porcentaje + "%");
     }
+}
 
 
