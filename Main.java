@@ -1,23 +1,23 @@
-package ejercicio4cuentasbancarias;
+package ejercicio5vehiculo;
 
 public class Main {
     public static void main(String[] args) {
 
-        // Crear una cuenta de ahorro
-        CuentaAhorro cuenta1 = new CuentaAhorro("AC-5001", "Monserrat Luna", 1500.00);
+        // Crear un objeto Automovil
+        Automovil auto1 = new Automovil("Toyota", 2010, 180.5);
 
         // Mostrar datos iniciales
-        System.out.println("Número de cuenta: " + cuenta1.getNumeroCuenta());
-        System.out.println("Titular: " + cuenta1.getTitular());
-        System.out.println("Saldo inicial: $" + cuenta1.getSaldo());
+        System.out.println("Marca: " + auto1.getMarca());
+        System.out.println("Año de fabricación: " + auto1.getAnioFabricacion());
+        System.out.println("Velocidad máxima: " + auto1.getVelocidadMaxima() + " km/h");
 
-        // Realizar un depósito
-        cuenta1.depositar(500);
-        System.out.println("Saldo después del depósito: $" + cuenta1.getSaldo());
+        // Probar encendido
+        String mensajeEncendido = auto1.encender();
+        System.out.println(mensajeEncendido);
 
-        // Realizar un retiro
-        cuenta1.retirar(300);
-        System.out.println("Saldo después del retiro: $" + cuenta1.getSaldo());
+        // Calcular antigüedad
+        int antiguedad = auto1.calcularAntiguedad(2024);
+        System.out.println("Antigüedad del vehículo: " + antiguedad + " años");
     }
 }
 
