@@ -1,23 +1,24 @@
-package ejercicio2Inventario;
+package ejercicio4cuentasbancarias;
 
 public class Main {
     public static void main(String[] args) {
 
-        // Crear un objeto Producto
-        Producto prod1 = new Producto("REF-200", 30, 15.75);
+        // Crear una cuenta de ahorro
+        CuentaAhorro cuenta1 = new CuentaAhorro("AC-5001", "Monserrat Luna", 1500.00);
 
         // Mostrar datos iniciales
-        System.out.println("Referencia: " + prod1.getReferencia());
-        System.out.println("Cantidad en stock: " + prod1.getCantidad());
-        System.out.println("Precio unitario: $" + prod1.getPrecioUnitario());
+        System.out.println("Número de cuenta: " + cuenta1.getNumeroCuenta());
+        System.out.println("Titular: " + cuenta1.getTitular());
+        System.out.println("Saldo inicial: $" + cuenta1.getSaldo());
 
-        // Incrementar stock
-        prod1.incrementarStock(20);
-        System.out.println("Cantidad después de entrada: " + prod1.getCantidad());
+        // Realizar un depósito
+        cuenta1.depositar(500);
+        System.out.println("Saldo después del depósito: $" + cuenta1.getSaldo());
 
-        // Calcular valor total del stock
-        double valorTotal = prod1.calcularValorTotal();
-        System.out.println("Valor total del stock: $" + valorTotal);
+        // Realizar un retiro
+        cuenta1.retirar(300);
+        System.out.println("Saldo después del retiro: $" + cuenta1.getSaldo());
     }
-
 }
+
+
