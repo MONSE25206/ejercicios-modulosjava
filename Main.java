@@ -1,24 +1,23 @@
-package libros;
+package ejercicio2Inventario;
 
-    public class Main {
+public class Main {
     public static void main(String[] args) {
 
-        // Crear un objeto Libro
-        Libro libro1 = new Libro("LB-001", "Gabriel García Márquez", true, 2015);
+        // Crear un objeto Producto
+        Producto prod1 = new Producto("REF-200", 30, 15.75);
 
-        // Mostrar información inicial
-        System.out.println("Identificador: " + libro1.getIdentificador());
-        System.out.println("Autor: " + libro1.getAutor());
-        System.out.println("Disponible: " + libro1.isDisponible());
-        System.out.println("Año de publicación: " + libro1.getAnioPublicacion());
+        // Mostrar datos iniciales
+        System.out.println("Referencia: " + prod1.getReferencia());
+        System.out.println("Cantidad en stock: " + prod1.getCantidad());
+        System.out.println("Precio unitario: $" + prod1.getPrecioUnitario());
 
-        // Probar método reservar
-        libro1.reservar();
-        System.out.println("Disponible después de reservar: " + libro1.isDisponible());
+        // Incrementar stock
+        prod1.incrementarStock(20);
+        System.out.println("Cantidad después de entrada: " + prod1.getCantidad());
 
-        // Probar método esAptoParaPrestamo
-        boolean apto = libro1.esAptoParaPrestamo(2024);
-        System.out.println("¿Es apto para préstamo? " + apto);
+        // Calcular valor total del stock
+        double valorTotal = prod1.calcularValorTotal();
+        System.out.println("Valor total del stock: $" + valorTotal);
+    }
 
-
-    }}
+}
